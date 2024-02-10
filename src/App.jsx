@@ -33,18 +33,15 @@ function App() {
 
   return (
     <div className='app'>
-        <Header/>
+        <Header authenticated={authenticated}/>
         <Routes>
            <Route path="" element={<Home/>}/>
            <Route path="/login" element={<Login user={user} getAuthenticated={getAuthenticated}/>}/>
            <Route path="/register" element={<Register/>}/>
            <Route path='/buyerDashboard' element={<BuyerDashboard/>}/>
            <Route path='/property' element={<Property/>}/>
-<<<<<<< HEAD
+
            <Route path='/sellerDashboard' element={<SellerDashboard/>}/>
-=======
-           <Route path='/buyerdashboard' element={<BuyerDashboard />} />
->>>>>>> 33c07db9dcdbb802bac0dcd0f8f30469d696839e
         </Routes>
     </div>
   )
