@@ -26,7 +26,7 @@ function Login() {
         <div className='login'>
             <div className="login-content">
                 <div className="login-content__head">
-                    <h1 className="">Register</h1>
+                    <h1 className="">Login</h1>
                 </div>
                 <form onSubmit={handleSubmit} className="form" id='register'>
                     <div className="form-item">
