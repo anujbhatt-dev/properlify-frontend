@@ -5,6 +5,9 @@ import Home from './components/home/Home'
 import Header from './components/header/Header'
 import Login from './components/Login'
 import Register from './components/Register'
+import BuyerDashboard from './components/buyer/BuyerDashboard'
+import Property from './components/buyer/Property'
+
 
 function App() {
   return (
@@ -14,6 +17,8 @@ function App() {
            <Route path="" element={<Home/>}/>
            <Route path="/login" element={<Login/>}/>
            <Route path="/register" element={<Register/>}/>
+           <Route path='/buyerDashboard' element={<BuyerDashboard/>}/>
+           <Route path='/property' element={<Property/>}/>
         </Routes>
     </div>
   )
