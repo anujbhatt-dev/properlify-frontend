@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import building from "../assets/images/building.png";
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 
 function Login() {
     
-    
-
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -17,10 +16,17 @@ function Login() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         // You can perform form submission logic here, like API calls or validation
-        console.log(formData);
+        try{
+            const response = await axios.post('http://localhost:5000/user/login', formData);
+            console.log('Login successfully');
+            // console.log(response1);
+        }
+        catch(err){
+            console.log(err);
+        }
     };
 
     return (
@@ -45,9 +51,9 @@ function Login() {
                         <p className="">Already have an account? 
                             <Link className='link' to="/register"> Signup</Link>
                         </p>
-                        <motion.button
-                        whileHover={{ y: -5 }}
-                        type="submit" className="button">Login</motion.button>
+                        <button
+                        // whileHover={{ y: -5 }}
+                        type="submit" className="button">Login</button>
                     </div>
                 </form>
             </motion.div>
