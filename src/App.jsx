@@ -39,7 +39,7 @@ function App() {
            <Route path="/register" element={<Register/>}/>
            <Route path='/buyerDashboard' element={<BuyerDashboard/>}/>
            <Route path='/sellerdashboard' element={<SellerDashboard />} />
-           <Route path='/property' element={<Property/>}/>
+           <Route path='/property' element={<Property />}/>
         </Routes>
     </div>
   )

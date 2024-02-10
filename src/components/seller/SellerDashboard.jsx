@@ -118,7 +118,6 @@ function SellerDashboard(props) {
                       <div className='card-price'><span>₹Price </span>{property.price} Lac</div>|
                       <div className='card-propertyAge'><span>Age </span>{property.propertyAge}</div>
                     </div>
-
                     
                 </div>
             ))}

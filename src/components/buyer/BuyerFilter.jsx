@@ -1,7 +1,13 @@
 import React from 'react'
 import { FaSearch } from "react-icons/fa";
+import axios from 'axios';
 
 function BuyerFilter(props) {
+
+    // const handleData = async(e) => {
+        
+    // }
+
   return (
     <div className='filter'>
       <div className='search'>
