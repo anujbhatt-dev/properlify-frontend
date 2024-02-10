@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className='app'>
-        <Header authenticated={authenticated}/>
+        <Header reset={reset} authenticated={authenticated}/>
         <Routes>
            <Route path="" element={<Home/>}/>
            <Route path="/login" element={<Login user={user} getAuthenticated={getAuthenticated}/>}/>

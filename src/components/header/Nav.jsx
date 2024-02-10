@@ -1,19 +1,27 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-function Nav() {
+function Nav(props) {
   return (
     <div className='nav'>
-            <NavLink exact  className={({ isActive, isPending }) =>
+            {!props.authenticated?
+              [
+                <NavLink exact  className={({ isActive, isPending }) =>
             isPending ? "nav__item" : isActive ? "nav__item nav__active" : ""
             }  to = '/login'>
                 login
-            </NavLink>
+            </NavLink>,
             <NavLink exact   className={({ isActive, isPending }) =>
             isPending ? "nav__item" : isActive ? "nav__item nav__active" : ""
             } to = '/register'>
                 register
             </NavLink>
+              ]:<button className='button' onClick={()=>props.reset()}>
+                  logout
+              </button>
+
+            }
+            
     </div>
   )
 }
