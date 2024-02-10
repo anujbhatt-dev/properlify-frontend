@@ -32,14 +32,14 @@ function App() {
 
   return (
     <div className='app'>
-        <Header/>
+        <Header authenticated={authenticated}/>
         <Routes>
            <Route path="" element={<Home/>}/>
            <Route path="/login" element={<Login user={user} getAuthenticated={getAuthenticated}/>}/>
            <Route path="/register" element={<Register/>}/>
-           <Route path='/buyerDashboard' element={<BuyerDashboard user={user} />}/>
-           <Route path='/sellerdashboard' element={<SellerDashboard user={user} />} />
-           <Route path='/property' element={<Property user={user} />}/>
+           <Route path='/buyerDashboard' element={<BuyerDashboard/>}/>
+           <Route path='/sellerdashboard' element={<SellerDashboard />} />
+           <Route path='/property' element={<Property/>}/>
         </Routes>
     </div>
   )

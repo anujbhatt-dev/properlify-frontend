@@ -2,11 +2,11 @@ import React from 'react'
 import Logo from './Logo'
 import Nav from './Nav'
 
-function Header() {
+function Header(props) {
   return (
     <div className='header'>
             <Logo/>
-            <Nav/>
+            {!props.authenticated && <Nav/>}
     </div>
   )
 }
