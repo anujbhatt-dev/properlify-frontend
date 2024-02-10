@@ -28,8 +28,8 @@ function Properties(props) {
                       <div className='card-propertyAge'><span>Age </span>{property.propertyAge}</div>
                     </div>
 
-                    <button className='explore'>
-                          Explore
+                    <button className='explore' >
+                          <Link to='/property'>Explore</Link>
                     </button>
 
                     

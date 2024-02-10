@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import building from "../assets/images/building.png";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
-function Login() {
-    
+function Login(props) {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -20,8 +20,11 @@ function Login() {
         e.preventDefault();
         // You can perform form submission logic here, like API calls or validation
         try{
-            const response = await axios.post('http://localhost:5000/user/login', formData);
+            const res = await axios.post('/user/login', formData);
             console.log('Login successfully');
+            props.getAuthenticated(res.data)
+            if(res.data.accountType==="Buyer") return navigate("/buyerDashboard")
+            if(res.data.accountType==="Seller") return navigate("/sellerDashboard")
             // console.log(response1);
         }
         catch(err){
