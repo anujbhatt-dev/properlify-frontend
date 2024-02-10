@@ -50,6 +50,7 @@
                 border-bottom: 2px solid transparent;
                 transition: all .2s;
                 background-color: rgba($color-white,.9);
+                color: $color-black;
                 &:hover,&:focus{
                     outline: none;
                     border-bottom: 2px solid orangered;

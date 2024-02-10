@@ -134,7 +134,7 @@ function BuyerDashboard() {
     };
 
     fetchProperties();
-  }, [properties])
+  }, [])
 
   return (
     <div className='buyerDashboard'>

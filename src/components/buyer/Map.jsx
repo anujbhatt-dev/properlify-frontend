@@ -7,7 +7,7 @@ import {
   useLoadScript,
 } from "@react-google-maps/api";
 
-function App() {
+function Map() {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
   });
@@ -16,16 +16,12 @@ function App() {
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        const response = await axios.get('/api/property/getAllProperty');
-        setProperties(response.data);
-      } catch (error) {
-        console.error('Error fetching properties:', error);
-      }
-    };
-
-    fetchProperties();
+    
+    axios.get('/property/allProperty').then(res=>{
+        setProperties(res.data);   
+    })
+      
+    
   }, []);
 
   const handleActiveMarker = (marker) => {
@@ -41,8 +37,8 @@ function App() {
         <div style={{ height: "20vh", width: "924px" }}>
           {isLoaded ? (
             <GoogleMap
-              center={{ lat: 20.5937, lng: 78.9629 }} // Update with your default center
-              zoom={13}
+              center={{ lat: 19.867171333162297, lng: 75.31240751515777 }} // Update with your default center
+              zoom={6}
               onClick={() => setActiveMarker(null)}
               mapContainerStyle={{ width: "100%", height: "60vh" }}
             >
@@ -73,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default Map;
