@@ -1,0 +1,29 @@
+.nav{
+    display: flex;
+    gap: 0 2rem;
+    font-size: 1rem;
+    font-weight: 100;
+    text-transform: capitalize;
+
+    & > *{
+        border-radius: 10px;
+        padding:.5rem 1rem;
+        transition: all .2s;
+        &:hover{
+            transform: translateY(-3px);
+        }
+        &:active{
+            transform: translateY(3px);
+        }
+        @include respond(phone){
+            border-radius: 5px;
+        }
+    }
+    &__item{
+
+    }
+    &__active{
+        background-color: $color-white;
+        color:$color-black;
+    }
+}
