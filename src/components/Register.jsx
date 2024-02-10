@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import building from "../assets/images/building.png";
+import { motion } from 'framer-motion';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -24,9 +25,12 @@ const handleSubmit = (e) => {
 
 return (
     <div className='login'>
-        <div className="login-content">
+        <motion.div className="login-content"
+        initial={{ x: -300 }}
+        animate={{ x: 0 }}
+        transition={{ type: "spring", stiffness: 130, delay: 0.04 }}>
             <div className="login-content__head">
-                <h1 className="">Buy/Sell your Property today!</h1>
+                <h1 className="">Register</h1>
             </div>
             <form onSubmit={handleSubmit} className="form" id='register'>
                 <div className="form-item">
@@ -56,10 +60,12 @@ return (
                     <p className="">Already have an account? 
                         <Link className='link' to="/login"> Login</Link>
                     </p>
-                    <button type="submit" className="button">Register</button>
+                    <motion.button
+                        whileHover={{ y: -5 }}
+                        type="submit" className="button">Register</motion.button>
                 </div>
             </form>
-        </div>
+        </motion.div>
         <div className="login-img">
             <img className="o1" src={building} alt="Building" />
             <img className="o2" src={building} alt="Building" />

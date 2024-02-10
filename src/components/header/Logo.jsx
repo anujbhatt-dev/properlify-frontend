@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import logoWhite from "../../assets/images/logoWhite.jpg"
 import logoBlack from "../../assets/images/logoBlack.jpg"
 import logoBlue from "../../assets/images/logoBlue.jpg"
@@ -8,9 +9,12 @@ import logoBluePng from "../../assets/images/logoBluePng.png"
 
 function Logo() {
   return (
-    <div className='logo'>
+    <motion.div className='logo'
+    initial={{ y: -100 }}
+    animate={{ y: 0 }}
+    transition={{ type: 'spring', stiffness: 100, delay: 0.02 }}>
         <img className='logo__img' src={logoWhitePng} alt="" />
-    </div>
+    </motion.div>
   )
 }
 

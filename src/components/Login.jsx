@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import building from "../assets/images/building.png";
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Login() {
     
@@ -24,7 +25,10 @@ function Login() {
 
     return (
         <div className='login'>
-            <div className="login-content">
+            <motion.div className="login-content"
+        initial={{ x: -300 }}
+        animate={{ x: 0 }}
+        transition={{ type: "spring", stiffness: 130, delay: 0.04 }}>
                 <div className="login-content__head">
                     <h1 className="">Login</h1>
                 </div>
@@ -41,10 +45,12 @@ function Login() {
                         <p className="">Already have an account? 
                             <Link className='link' to="/register"> Signup</Link>
                         </p>
-                        <button type="submit" className="button">Login</button>
+                        <motion.button
+                        whileHover={{ y: -5 }}
+                        type="submit" className="button">Login</motion.button>
                     </div>
                 </form>
-            </div>
+            </motion.div>
             <div className="login-img">
                 <img className="o1" src={building} alt="Building" />
                 <img className="o2" src={building} alt="Building" />
