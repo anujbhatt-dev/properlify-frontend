@@ -74,6 +74,25 @@ button{
     
 }
 
+.button{
+    width:8rem;
+    height: 3rem;
+    color: $color-white;
+    background-color: $color-properlify-background;
+    border: none;
+    border: 1px solid rgba($color-white,.5);
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.link{
+    color: $color-properlify-tertiary;
+    transition: all .5s;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
 
 
 
