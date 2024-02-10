@@ -39,7 +39,7 @@ function Login() {
                     </div>
                     <div className="form-item">
                         <p className="">Already have an account? 
-                            <Link className='link' to="/login"> Log In</Link>
+                            <Link className='link' to="/register"> Log In</Link>
                         </p>
                         <button type="submit" className="button">Login</button>
                     </div>
