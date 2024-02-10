@@ -14,9 +14,11 @@
 @import "styles/base/base.scss";
 
 //sass-components
+@import "styles/sass-components/home.scss";
 @import "styles/sass-components/header.scss";
 @import "styles/sass-components/nav.scss";
 @import "styles/sass-components/logo.scss";
 @import "styles/sass-components/login.scss";
 @import "styles/sass-components/buyerDashboard.scss";
+@import "styles/sass-components/sellerDashboard.scss";
 @import "styles/sass-components/property.scss";

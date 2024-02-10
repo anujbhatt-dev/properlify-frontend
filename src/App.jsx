@@ -7,6 +7,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import BuyerDashboard from './components/buyer/BuyerDashboard'
 import Property from './components/buyer/Property'
+import SellerDashboard from './components/seller/SellerDashboard'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
            <Route path="/register" element={<Register/>}/>
            <Route path='/buyerDashboard' element={<BuyerDashboard/>}/>
            <Route path='/property' element={<Property/>}/>
+           <Route path='/sellerDashboard' element={<SellerDashboard/>}/>
         </Routes>
     </div>
   )
