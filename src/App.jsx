@@ -1,6 +1,6 @@
-import React, {useEffect, useNavigate, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import "./App.scss"
-import { Route, Routes } from 'react-router'
+import { Route, Routes, useNavigate } from 'react-router'
 import Home from './components/home/Home'
 import Header from './components/header/Header'
 import Login from './components/Login'
@@ -11,7 +11,7 @@ import SellerDashboard from './components/seller/SellerDashboard'
 
 
 function App() {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const [authenticated,setAuthentication] = useState(false)
   const [user,setUser]= useState({})

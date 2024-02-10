@@ -11,7 +11,8 @@ function BuyerFilter(props) {
   return (
     <div className='filter'>
       <div className='search'>
-          <input onChange={props.handleChange} name="location" className='search-input' type="text" placeholder='search location'/>
+          <input onChange={props.handleChange} name="location" className='search-input'
+           type="text" placeholder='search location' value={props.data.location}/>
           <button onClick={props.searchSubmit}  className='search-btn' ><FaSearch/></button>
       </div>
       <hr className='hr-primary'/>
