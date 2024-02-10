@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function SellerDashboard() {
+import p1 from "../../assets/images/p1.jpg"
+import p2 from "../../assets/images/p2.jpg"
+import p3 from "../../assets/images/p3.jpg"
+import p4 from "../../assets/images/p4.jpg"
+
+function SellerDashboard(props) {
     const [formData, setFormData] = useState({
         location: '',
         price: '',
@@ -21,6 +26,22 @@ function SellerDashboard() {
         const response = await axios.post('http://localhost:5000/property/listProperty', formData);
         console.log(formData);
     };
+
+    const [ list, setList ] = useState([]);
+
+    useEffect(() => {
+        const fetchProperties = async () => {
+            try {
+              const response = await axios.get(`/property/myProperty/${props.user._id}`); // Adjust the endpoint according to your backend API
+              setList(response.data);
+            } catch (error) {
+              console.error('Error fetching property data:', error);
+            }
+          };
+      
+          fetchProperties();
+        }, [])
+
 
     return (
         <div className='sellerDashboard'>
@@ -85,6 +106,23 @@ function SellerDashboard() {
             <div className='Added properties'>
                 <div className="login-content__head">
                     <center><h1 className="">Added Property</h1></center>
+                    <div className='cards'>
+                {list.map((property,index)=>(
+                <div key ={index} className='card'>
+                    <img src={index%4+1==1?p1:index%4+1==2?p2:index%4+1==3?p3:index%4+1==4?p4:null} alt="" />
+                    <div className="flex-wrapper">
+                      <div className='card-location'><span>Location </span>{property.location}</div>|
+                      <div className='card-propertyType'><span>Type </span>{property.propertyType}</div>
+                    </div>
+                    <div className="flex-wrapper">
+                      <div className='card-price'><span>₹Price </span>{property.price} Lac</div>|
+                      <div className='card-propertyAge'><span>Age </span>{property.propertyAge}</div>
+                    </div>
+
+                    
+                </div>
+            ))}
+          </div>
                 </div>
             </div>
         </div>

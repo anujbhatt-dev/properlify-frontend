@@ -37,9 +37,9 @@ function App() {
            <Route path="" element={<Home/>}/>
            <Route path="/login" element={<Login user={user} getAuthenticated={getAuthenticated}/>}/>
            <Route path="/register" element={<Register/>}/>
-           <Route path='/buyerDashboard' element={<BuyerDashboard/>}/>
-           <Route path='/sellerdashboard' element={<SellerDashboard />} />
-           <Route path='/property' element={<Property/>}/>
+           <Route path='/buyerDashboard' element={<BuyerDashboard user={user} />}/>
+           <Route path='/sellerdashboard' element={<SellerDashboard user={user} />} />
+           <Route path='/property' element={<Property user={user} />}/>
         </Routes>
     </div>
   )
