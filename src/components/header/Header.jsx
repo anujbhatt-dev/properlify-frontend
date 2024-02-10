@@ -6,7 +6,7 @@ function Header(props) {
   return (
     <div className='header'>
             <Logo/>
-            {!props.authenticated && <Nav/>}
+            {<Nav reset={props.reset} authenticated={props.authenticated}/>}
     </div>
   )
 }
