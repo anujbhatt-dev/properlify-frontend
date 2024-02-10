@@ -29,7 +29,7 @@ function Properties(props) {
                     </div>
 
                     <button className='explore' >
-                          Explore
+                          <Link to='/property'>Explore</Link>
                     </button>
 
                     

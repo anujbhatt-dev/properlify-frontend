@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Map from './Map';
 
 import p1 from "../../assets/images/p1.jpg"
 import p2 from "../../assets/images/p2.jpg"
@@ -33,7 +34,7 @@ function Property() {
             <div className='property-price'><span>Amenities  </span>{property.amenities.map(i=>i+" | ")}</div>
         </div>
         <div className='map'>
-            
+            <Map />
         </div>
     </div>
   );
