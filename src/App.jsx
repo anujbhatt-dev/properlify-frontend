@@ -27,7 +27,6 @@ function App() {
   }
 
   useEffect(()=>{
-    console.log(user);
   },[user])
 
   return (
@@ -39,7 +38,7 @@ function App() {
            <Route path="/register" element={<Register/>}/>
            <Route path='/buyerDashboard' element={<BuyerDashboard/>}/>
            <Route path='/property' element={<Property/>}/>
-           <Route path='/buyerdashboard' element={<BuyerDashboard />} />
+           {/* <Route path='/buyerdashboard' element={<BuyerDashboard />} /> */}
         </Routes>
     </div>
   )
