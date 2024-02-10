@@ -28,7 +28,6 @@ function App() {
   }
 
   useEffect(()=>{
-    console.log(user);
   },[user])
 
   return (
@@ -39,9 +38,10 @@ function App() {
            <Route path="/login" element={<Login user={user} getAuthenticated={getAuthenticated}/>}/>
            <Route path="/register" element={<Register/>}/>
            <Route path='/buyerDashboard' element={<BuyerDashboard/>}/>
+           <Route path='/sellerdashboard' element={<SellerDashboard />} />
            <Route path='/property' element={<Property/>}/>
-
            <Route path='/sellerDashboard' element={<SellerDashboard/>}/>
+
         </Routes>
     </div>
   )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function SellerDashboard() {
     const [formData, setFormData] = useState({
@@ -14,9 +15,10 @@ function SellerDashboard() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         // Add logic to handle form submission, e.g., send data to backend or perform validation
+        const response = await axios.post('http://localhost:5000/property/listProperty', formData);
         console.log(formData);
     };
 

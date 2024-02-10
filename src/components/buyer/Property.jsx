@@ -34,7 +34,7 @@ function Property() {
             <div className='property-price'><span>Amenities  </span>{property.amenities.map(i=>i+" | ")}</div>
         </div>
         <div className='map'>
-            <Map />
+            {/* <Map /> */}
         </div>
     </div>
   );

@@ -3,9 +3,10 @@ import p1 from "../../assets/images/p1.jpg"
 import p2 from "../../assets/images/p2.jpg"
 import p3 from "../../assets/images/p3.jpg"
 import p4 from "../../assets/images/p4.jpg"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Properties(props) {
+
   return (
     <div className='properties'>
           <div className='map'>
@@ -28,7 +29,7 @@ function Properties(props) {
                       <div className='card-propertyAge'><span>Age </span>{property.propertyAge}</div>
                     </div>
 
-                    <button className='explore' >
+                    <button className='explore' type='submit'>
                           <Link to='/property'>Explore</Link>
                     </button>
 
