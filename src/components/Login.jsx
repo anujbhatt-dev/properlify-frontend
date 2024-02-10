@@ -26,7 +26,7 @@ function Login() {
         <div className='login'>
             <div className="login-content">
                 <div className="login-content__head">
-                    <h1 className="">Register</h1>
+                    <h1 className="">Login</h1>
                 </div>
                 <form onSubmit={handleSubmit} className="form" id='register'>
                     <div className="form-item">
@@ -46,7 +46,9 @@ function Login() {
                 </form>
             </div>
             <div className="login-img">
-                <img src={building} alt="Building" />
+                <img className='o1' src={building} alt="Building" />
+                <img className='o2' src={building} alt="Building" />
+                <img className='o3' src={building} alt="Building" />
             </div>
         </div>
     );
