@@ -60,7 +60,9 @@ return (
                     <p className="">Already have an account? 
                         <Link className='link' to="/login"> Login</Link>
                     </p>
-                    <button type="submit" className="button">Register</button>
+                    <motion.button
+                        whileHover={{ y: -5 }}
+                        type="submit" className="button">Register</motion.button>
                 </div>
             </form>
         </motion.div>

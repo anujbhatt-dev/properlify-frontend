@@ -45,7 +45,9 @@ function Login() {
                         <p className="">Already have an account? 
                             <Link className='link' to="/register"> Signup</Link>
                         </p>
-                        <button type="submit" className="button">Login</button>
+                        <motion.button
+                        whileHover={{ y: -5 }}
+                        type="submit" className="button">Login</motion.button>
                     </div>
                 </form>
             </motion.div>
