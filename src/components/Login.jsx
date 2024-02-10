@@ -50,9 +50,9 @@ function Login() {
                 </form>
             </motion.div>
             <div className="login-img">
-                <img className='o1' src={building} alt="Building" />
-                <img className='o2' src={building} alt="Building" />
-                <img className='o3' src={building} alt="Building" />
+                <img className="o1" src={building} alt="Building" />
+                <img className="o2" src={building} alt="Building" />
+                <img className="o3" src={building} alt="Building" />
             </div>
         </div>
     );
