@@ -7,6 +7,12 @@ import { Link, useNavigate } from 'react-router-dom'
 
 function Properties(props) {
 
+  const navigate = useNavigate();
+
+  const exploreHandler = (e) => {
+    navigate('/property');
+  }
+
   return (
     <div className='properties'>
           <div className='map'>
@@ -29,8 +35,8 @@ function Properties(props) {
                       <div className='card-propertyAge'><span>Age </span>{property.propertyAge}</div>
                     </div>
 
-                    <button className='explore' type='submit'>
-                          <Link to='/property'>Explore</Link>
+                    <button className='explore' type='submit' onClick={exploreHandler}>
+                          Explore
                     </button>
 
                     
