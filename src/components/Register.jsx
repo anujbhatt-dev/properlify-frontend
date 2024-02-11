@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import building from "../assets/images/building.png";
+import logoWhitePng from "../assets/images/logoWhitePng.png"
+import logoBlackPng from "../assets/images/logoBlackPng.png"
+import logoBluePng from "../assets/images/logoBluePng.png"
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
@@ -85,9 +87,9 @@ function Register() {
                 </form>
             </motion.div>
             <div className="login-img">
-                <img className="o1" src={building} alt="Building" />
-                <img className="o2" src={building} alt="Building" />
-                <img className="o3" src={building} alt="Building" />
+            <img className="o1" src={logoWhitePng} alt="Building" />
+                <img className="o2" src={logoBlackPng} alt="Building" />
+                <img className="o3" src={logoBluePng} alt="Building" />
             </div>
         </div>
 
