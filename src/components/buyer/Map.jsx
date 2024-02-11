@@ -7,19 +7,20 @@ import {
   useLoadScript,
 } from "@react-google-maps/api";
 
-function Map() {
+function Map(props) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_MAP_API_KEY,
   });
 
   const [activeMarker, setActiveMarker] = useState(null);
-  const [properties, setProperties] = useState([]);
+  // const [properties, setProperties] = useState([]);
 
   useEffect(() => {
     
-    axios.get('/property/allProperty').then(res=>{
-        setProperties(res.data);   
-    })
+    // axios.get('/property/allProperty').then(res=>{
+    //     setProperties(res.data);   
+    // })
+    
       
     
   }, []);
@@ -33,16 +34,16 @@ function Map() {
 
   return (
     <Fragment>
-      <div className="container">
-        <div style={{ height: "20vh", width: "924px" }}>
+      <div className="">
+        <div className="container"> 
           {isLoaded ? (
             <GoogleMap
               center={{ lat: 19.867171333162297, lng: 75.31240751515777 }} // Update with your default center
               zoom={6}
               onClick={() => setActiveMarker(null)}
-              mapContainerStyle={{ width: "100%", height: "60vh" }}
+              mapContainerStyle={{ borderRadius:"10px", height: "50vh" ,margin: "0 5rem",boxShadow: "0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14)" }}
             >
-              {properties.map((property) => (
+              {props.properties.map((property) => (
                 <MarkerF
                   key={property._id} // Assuming each property has a unique _id
                   position={{ lat: parseFloat(property.latitude), lng: parseFloat(property.longitude) }}
@@ -55,7 +56,7 @@ function Map() {
                   {activeMarker === property._id ? (
                     <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
                       <div>
-                        <p>{property.location}</p>
+                        <p style={{color:"black"}}>{property.location}</p>
                       </div>
                     </InfoWindowF>
                   ) : null}

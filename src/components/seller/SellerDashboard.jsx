@@ -7,6 +7,7 @@ import p3 from "../../assets/images/p3.jpg"
 import p4 from "../../assets/images/p4.jpg"
 
 function SellerDashboard(props) {
+    const [ list, setList ] = useState([]);
     const [formData, setFormData] = useState({
         location: '',
         price: '',
@@ -23,16 +24,25 @@ function SellerDashboard(props) {
     const handleSubmit = async(e) => {
         e.preventDefault();
         // Add logic to handle form submission, e.g., send data to backend or perform validation
-        const response = await axios.post('http://localhost:5000/property/listProperty', formData);
-        console.log(formData);
+        try {
+            const response = await axios.post('http://localhost:5000/property/listProperty', formData);
+            console.log(formData);
+            setList((pState)=>{
+                return [...pState,formData]
+            })
+            
+        } catch (error) {
+            console.log(error);
+        }
     };
 
-    const [ list, setList ] = useState([]);
 
     useEffect(() => {
         const fetchProperties = async () => {
+            console.log("here"+JSON.stringify(props.user));
             try {
               const response = await axios.get(`/property/myProperty/${props.user._id}`); // Adjust the endpoint according to your backend API
+              console.log(response);
               setList(response.data);
             } catch (error) {
               console.error('Error fetching property data:', error);

@@ -33,11 +33,11 @@ function Properties(props) {
     <div className='properties'>
       <div className='map'></div>
       <div className='properties-count'>
-        Total Properties: <span>{filteredProperties.length}</span>
+        Total Properties: <span>{props.properties.length}</span>
       </div>
-      {filteredProperties.length !== 0 ? (
+      {props.properties.length !== 0 ? (
         <div className='cards'>
-          {filteredProperties.map((property, index) => (
+          {props.properties.map((property, index) => (
             <div key={index} className='card'>
               <img src={index % 4 + 1 === 1 ? p1 : index % 4 + 1 === 2 ? p2 : index % 4 + 1 === 3 ? p3 : index % 4 + 1 === 4 ? p4 : null} alt="" />
               <div className="flex-wrapper">

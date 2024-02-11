@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     min-height: calc(100vh - 10rem);
-    margin: 0 10rem;
+    margin: 0 5rem;
     // overflow: hidden;
     gap: 10px;
     position: relative;
@@ -20,14 +20,14 @@
         background-color: rgba($color-white, .01);
     }
 
-    &-container {
+    & .container {
         display: flex;
         flex-direction: column;
     }
 
     &-properties {
-        margin-bottom: 2rem;
-        margin-top: 22rem;
+        margin: 2rem 0;
+        // margin-top: 22rem;
         width: 100%;
         background-color: rgba($color-white, .01);
         // border: 1px solid rgba($color-white,.5);

@@ -10,8 +10,8 @@ import logoBluePng from "../assets/images/logoBluePng.png"
 function Login(props) {
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
-        email: '',
-        password: ''
+        email: 'sajal123@gmail.com',
+        password: 'qwerty123'
     });
 
     const handleChange = (e) => {

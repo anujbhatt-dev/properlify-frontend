@@ -17,6 +17,7 @@ function BuyerDashboard() {
   const [properties, setProperties] = useState([
   ]);
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
@@ -28,8 +29,19 @@ function BuyerDashboard() {
     console.log(data);
   };
 
-  const searchSubmit = () => {
+  const searchSubmit = (e) => {
     e.preventDefault();
+    console.log(data.location);
+    if(data.location===''){
+      axios.get('/property/allProperty').then(res=>{
+        setProperties(res.data);
+      })
+    }
+    let filterProperty = properties
+    filterProperty = filterProperty.filter(i=> i.location===data.location)
+    console.log(filterProperty);
+    setProperties([...filterProperty])
+    
   }
 
   useEffect(() => {
@@ -57,7 +69,7 @@ function BuyerDashboard() {
       </div>
       <div className='container'>
         <div className="map">
-          <Map />
+          <Map properties={properties}/>
         </div>
         <div className='buyerDashboard-properties'>
           {/* <Map /> */}
