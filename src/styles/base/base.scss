@@ -11,6 +11,9 @@ body{
 
 html{
     overflow-x: hidden;
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 
 *{
@@ -121,3 +124,88 @@ button{
 .map{
 }
 
+
+.problem{
+    width: 50%;
+    margin: auto;
+    & h1{
+        font-size: 3rem;
+    }
+    & p{
+        line-height: 1.5;
+        text-align: justify;
+    }
+}
+
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Adjust the number of columns as needed
+    gap: 20px; // Adjust the gap between grid items as needed
+    margin:  0 20rem;
+  }
+  
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 200px; // Adjust the image size as needed
+    height: 200px; // Adjust the image size as needed
+    border-radius: 50%; // Make the image round
+    object-fit: cover;
+  }
+  
+  .team-member-name {
+    margin-top: 10px; // Adjust the spacing between the image and the name as needed
+  }
+  
+
+  /* Footer container */
+.footer {
+    color: #fff;
+    padding: 20px 0;
+    border-top: 1px solid rgba($color-white,.1);
+    margin-top: 10rem;
+  }
+  
+  /* Footer content */
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Footer column */
+  .footer-column {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  /* Footer column heading */
+  .footer-column h4 {
+    margin-bottom: 10px;
+  }
+  
+  /* Footer column paragraphs */
+  .footer-column p {
+    margin-bottom: 10px;
+  }
+  
+  /* Social icons */
+  .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  /* Footer bottom */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+  }
+  

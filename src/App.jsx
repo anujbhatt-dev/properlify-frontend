@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useNavigate, useState} from 'react'
 import "./App.scss"
-import { Route, Routes, useNavigate } from 'react-router'
+import { Route, Routes } from 'react-router'
 import Home from './components/home/Home'
 import Header from './components/header/Header'
 import Login from './components/Login'
@@ -8,6 +8,9 @@ import Register from './components/Register'
 import BuyerDashboard from './components/buyer/BuyerDashboard'
 import Property from './components/buyer/Property'
 import SellerDashboard from './components/seller/SellerDashboard'
+import Team from './components/Team'
+import Problem from './components/Problem'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -39,8 +42,12 @@ function App() {
            <Route path="/register" element={<Register/>}/>
            <Route path='/buyerDashboard' element={<BuyerDashboard/>}/>
            <Route path='/sellerdashboard' element={<SellerDashboard />} />
-           <Route path='/property' element={<Property />}/>
+           <Route path='/property' element={<Property/>}/>
+           <Route path='/team' element={<Team/>}/>
+           <Route path='/problem' element={<Problem/>} />
         </Routes>
+        
+        <Footer/>
     </div>
   )
 }

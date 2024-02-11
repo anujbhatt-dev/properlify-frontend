@@ -3,6 +3,7 @@ import Properties from './Properties';
 import BuyerFilter from './BuyerFilter';
 import axios from 'axios';
 import Map from './Map';
+import Notification from './Notification';
 
 function BuyerDashboard() {
   const [data, setData] = useState({
@@ -63,7 +64,7 @@ function BuyerDashboard() {
           <Properties properties={properties} />
         </div>
       </div>
-
+        <Notification/>
     </div>
   );
 }
